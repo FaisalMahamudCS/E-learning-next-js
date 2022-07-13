@@ -1,7 +1,8 @@
+const mongoose = require('mongoose')
 import { Schema, model, models } from 'mongoose';
-
-const CourseSchema = new Schema({
+const CourseSchema = new mongoose.Schema({
     slug:String,
+   
    picture:String,
    course_name:String,
    course_desc:String,
@@ -10,6 +11,6 @@ const CourseSchema = new Schema({
 
   });
   
-
-  
-  export default mongoose.model('Course',CourseSchema);
+mongoose.models={}
+  const Course=model("Course",CourseSchema);
+  export default Course;
